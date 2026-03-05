@@ -1,7 +1,7 @@
 """Main script to demonstrate the GraphEmbedding model on a simple graph.
 
-This script initializes a GraphEmbedding model, trains it on a small line graph 
-with a random number of nodes between 5 and 20, and prints the learned 
+This script initializes a GraphEmbedding model, trains it on a randomly generated 
+graph with between 8 and 20 nodes, and prints/plots the learned 
 embeddings for each node after training.
 
 Usage:
@@ -13,7 +13,7 @@ from visualization import plot_graph_embeddings
 
 # The big red activation button.
 if __name__ == "__main__":
-    num_nodes = random.randint(5, 20) # Generate a random number of nodes between 5 and 20.
+    num_nodes = random.randint(8, 20) # Generate a random number of nodes between 8 and 20.
     # Generate random edges for the graph.
     edges = []
     for i in range(num_nodes):
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     print(f"Initializing GraphEmbedding model with {num_nodes} nodes and {len(edges)} edges...")
     model = GraphEmbedding(num_nodes=num_nodes, embedding_dim=2, lr=0.1)
     print("Training starting...")
-    model.train(edges, epochs=150, negative_samples=4)
+    model.train(edges, epochs=550, negative_samples=4)
     print("Learned Embeddings:")
     for i in range(num_nodes):
         emb = [round(x, 4) for x in model.get_embedding(i)]

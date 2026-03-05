@@ -3,14 +3,6 @@
 It optimizes node embeddings to preserve first-order proximity using
 stochastic gradient descent with negative sampling.
 
-Args:
-    num_nodes (int): Number of nodes in the graph.
-    embedding_dim (int): Dimensionality of the node embeddings.
-    lr (float): Learning rate for optimization.
-
-Returns:
-    A GraphEmbedding instance with trained node embeddings.
-
 Usage:
     from graph_embedding import GraphEmbedding
     model = GraphEmbedding(num_nodes=10, embedding_dim=2, lr=0.1)
